@@ -1,0 +1,46 @@
+body {
+  background: black;
+}
+.navbar navbar-light bg-light {
+  background: tan;
+}
+
+.Score {
+  text-align: right;
+  padding-right: 30px;
+}
+
+.navbar {
+  background: tan;
+}
+
+h1 {
+  text-align: center;
+  background: tan;
+  width: 100%;
+}
+
+h3 {
+  text-align: center;
+}
+
+.button {
+  text-align: center;
+}
+
+figure {
+  margin: 0 auto;
+  background: tan;
+  height: 500px;
+  width: 66%;
+}
+
+#startBtn {
+  border-radius: 4px;
+  text-align: center;
+  background: black;
+  color: white;
+  margin: 0 auto;
+  padding: 5px;
+  float: center;
+}
