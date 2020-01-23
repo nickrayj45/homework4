@@ -24,8 +24,15 @@ h3 {
   text-align: center;
 }
 
+h4 {
+  text-align: center;
+}
 .button {
   text-align: center;
+}
+
+.card {
+  height: 50%;
 }
 
 figure {
