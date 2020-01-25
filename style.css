@@ -31,6 +31,18 @@ h4 {
   text-align: center;
 }
 
+#questions {
+  text-align: center;
+  opacity: 100;
+  width: 33%;
+  margin: 0 auto;
+}
+
+#id {
+  text-align: center;
+  margin: 0 auto;
+}
+
 .card {
   height: 50%;
 }
