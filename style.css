@@ -1,5 +1,5 @@
 body {
-  background: black;
+  background: white;
 }
 .navbar navbar-light bg-light {
   background: tan;
@@ -16,7 +16,7 @@ body {
 
 h1 {
   text-align: center;
-  background: tan;
+  background: white;
   width: 100%;
 }
 
@@ -44,12 +44,12 @@ h4 {
 }
 
 .card {
-  height: 50%;
+  height: 100%;
 }
 
 figure {
   margin: 0 auto;
-  background: tan;
+  background: white;
   height: 500px;
   width: 66%;
 }
@@ -57,8 +57,8 @@ figure {
 #startBtn {
   border-radius: 4px;
   text-align: center;
-  background: black;
-  color: white;
+  background: white;
+  color: black;
   margin: 0 auto;
   padding: 5px;
   float: center;

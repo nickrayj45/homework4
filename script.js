@@ -3,17 +3,17 @@
 var startBtn = document.getElementById("startBtn");
 var timeLeft = document.querySelector(".timeLeft");
 var pointsEarned = document.querySelector(".Score");
+var createBtn;
+var choicesDiv;
+var userAnswers = [];
+// var emptyObj = 
+
 startBtn.addEventListener("click", function() {
   startQuiz();
-  // startScore();
 });
-// startBtn.addEventListener("click", function() {
-//   showQuestions();
-// });
 
-// Do I need to create a different variable for each question to have each question appear
-// individually?
 
+// Questions Array with questions, choices, and answers
 var questionsArr = [
   {
     question: "What method starts a timer in Javascript?",
@@ -59,46 +59,58 @@ function startQuiz() {
 
   for (i = 0; i < questionsArr.length; i++) {
     //Grab the question
+    var displayQuestion = document.getElementById("questions");
     var questionString = questionsArr[i].question;
+    var questionDiv = document.createElement("div");
+    $(displayQuestion).append(questionDiv);
     // Show the user the question
 
-    var displayQuestion = document.getElementById("questions");
-    displayQuestion.innerHTML = questionString;
-
+    var questionP = document.createElement("p");
+    questionP.textContent = questionString;
+    $(questionDiv).append(questionP);
     // Grab the choices
-    var choicesString = questionsArr[i].choices[0];
-    var choicesString = questionsArr[i].choices[1];
-    var choicesString = questionsArr[i].choices[2];
+    // var choicesString = questionsArr[i].choices[0];
+    // var choicesString = questionsArr[i].choices[1];
+    // var choicesString = questionsArr[i].choices[2];
 
     // // Show the user the choices
-    var displayChoices = document.getElementById("choiceA");
-    displayChoices.innerHTML = choicesString;
 
-    var displayChoices = document.getElementById("choiceB");
-    displayChoices.innerHTML = choicesString;
-
-    var displayChoices = document.getElementById("choiceC");
-    displayChoices.innerHTML = choicesString;
+    // // create a function or an if statement that will determine the correct or incorrect answer
+    // if (userChoice == questionsArr.answer) {
+    //   alert("Correct!");
+    // } else "Incorrect!";
 
     // console.log(questionsArr[i].title);
     for (j = 0; j < questionsArr[i].choices.length; j++) {
-      // console.log(questionsArr[i].choices[j]);
-      // for (k = 0; k < questionsArr[k].answer.length; k++) {
-      //   console.log(questionsArr[k].answer[k]);
-      // }
+      // var displayChoices = document.getElementById("options");
+      createBtn = document.createElement("button");
+      choicesDiv = document.createElement("div");
+      createBtn.textContent = questionsArr[i].choices[j];
+      $(createBtn).attr("value", questionsArr[i].choices[j]);
+      $(createBtn).attr("class", "choiceBtn");
+      // createBtn.onclick = function() {
+      //   keyStroke(this);
+      // };
+      $(choicesDiv).append(createBtn);
+      $(questionDiv).append(choicesDiv);
     }
   }
 }
 
-// var div = document.createElement("card");
-// div.setAttribute("#questions", questionsArr);
+// Click function
+$("Button").on("click", ".choiceBtn", function() {
+  var userClick = $(this).val();
+  // console.log($(this).val());
 
-// document.appendChild("questions");
+  // if/else statement
+  userAnswers.push(userClick);
+  // console.log(userAnswers);
+});
 
-// // Create a function to take score
-// function startScore() {
-//   var scoreinterval = setInterval(function() {
-//     totalPoints--;
-//     Score.textContent = "Points Earned: ";
-//   });
+// for loop that loops through the userAnswers array and compares to correct answer for question
+// for (i = 0; (i < questionsArr[i].choices) {
+//   userAnswers == questionsArr[i].answer;
+
 // }
+// it can be the same "i"
+// if statement should be what the user clicked should match the correct answer
